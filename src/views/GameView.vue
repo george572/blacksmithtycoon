@@ -6,8 +6,8 @@ import ControlPanel from '@/components/ControlPanel.vue';
 
 <template>
   <main>
-    <BaseWorker/>
-    <BaseBuilding/> 
-    <ControlPanel/>
+    <BaseWorker />
+    <BaseBuilding /> 
+    <ControlPanel />
   </main>
 </template>
