@@ -9,7 +9,7 @@ import BuildingArea from '@/components/areas/BuildingArea.vue'
 <template>
   <main>
     <WorkingArea>
-      <BaseWorker :destination="'ironVein#12'" />
+      <BaseWorker :destination="'ironVein#122'" />
     </WorkingArea>
     <BuildingArea>
       <BaseBuilding /> 

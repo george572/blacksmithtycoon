@@ -1,5 +1,5 @@
 <script setup lang='ts'>
-import { onMounted } from 'vue';
+import { onMounted, watch } from 'vue';
 import { UseGoToDestination } from '@/composables/UseGoToDestination';
 
 const props = defineProps({
@@ -9,20 +9,27 @@ const props = defineProps({
   }
 });
 
-const { goToDestination } = UseGoToDestination();
+const { goToDestination, arrivedAtDestination } = UseGoToDestination();
 
 
-// const startResourceGathering = () => {
-
-// }
+const startResourceGathering = () => {
+  console.log('Starting to gather resources!')
+}
 
 // const submitGatheredResources = () => {
   
 // }
 
-onMounted(() => {
-  goToDestination('me', 'ironVein#122');
+onMounted(async () => {
+  goToDestination('me', props.destination);
 });
+
+watch(arrivedAtDestination, () => {
+  if(arrivedAtDestination.value === true) {
+    startResourceGathering();
+  }
+})
+
 </script>
 
 <template>
